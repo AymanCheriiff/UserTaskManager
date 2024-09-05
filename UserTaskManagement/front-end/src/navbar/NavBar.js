@@ -3,8 +3,8 @@ import styles from './NavBar.module.css'
 function NavBar(){
     return(
         <div className={styles.nav}>
-            <div className={styles.logo}>
-                <h4>task management application</h4>
+            <div className={styles.container}>
+                <h1>task management app</h1>
             </div>
         </div>
     )
