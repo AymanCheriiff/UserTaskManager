@@ -1,15 +1,10 @@
 import { useState } from 'react';
 import styles from './NewTask.module.css'
 
-function NewTask(){
-
-    const [isModalOpen, setIsModalOpen] = useState(true);
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+function NewTask({ isOpen, onClose }){
+    if (!isOpen) return null;
     return(<>
-    {isModalOpen && (<div className={styles.modal}>
+    <div className={styles.modal}>
         <div className={styles.cover}></div>
         <div className={styles.container}>
             <form className={styles.form}>
@@ -33,12 +28,12 @@ function NewTask(){
                     </div>
                 </div>
                 <div className={styles.buttons}>
-                    <button className={`${styles.btn} ${styles.close}`} onClick={() => setIsModalOpen(false)}>close</button>
+                    <button className={`${styles.btn} ${styles.close}`} onClick={onClose}>close</button>
                     <button className={`${styles.btn} ${styles.add}`}>add task</button>
                 </div>
             </form>
         </div>
-    </div>)}</>)
+    </div></>)
 }
 
 export default NewTask;

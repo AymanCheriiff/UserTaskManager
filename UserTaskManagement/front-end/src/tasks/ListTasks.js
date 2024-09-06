@@ -7,9 +7,8 @@ function ListTasks(){
     const [activeButton, setActiveButton] = useState('Today');
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const openModal = () => {
-        setIsModalOpen(true);
-    };
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
     const handleButtonClick = (buttonName) => {
         setActiveButton(buttonName);
     };
@@ -48,13 +47,20 @@ function ListTasks(){
                         <h3>task name</h3>
                         <h3>27/10/2024</h3>
                         <div className={styles.taskActions}>
-                            
+                            <i class="bi bi-pencil-square"></i>
+                            <i class="bi bi-trash"></i>
                         </div>
                     </div>
                 </div>
             </div>
+            <div className={styles.pagination}>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+            </div>
         </div>
-        {isModalOpen && <NewTask/>}
+        <NewTask isOpen={isModalOpen} onClose={closeModal}/>
     </div>)
 }
 
