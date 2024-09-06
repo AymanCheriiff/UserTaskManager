@@ -1,11 +1,12 @@
 .listTasks{
-    height: 100%;
-    display: flex;
-    flex-direction: column;   
+    display: flex; 
 }
 
 .container{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .actions{
@@ -38,4 +39,52 @@
 .active{
     background-color: rgb(209, 28, 28);
     color: white;
+}
+
+.tasks{
+    box-shadow: 0 0 1px gray;
+    padding: 0 25px;
+    border-radius: 10px;
+    margin: 50px auto;
+    width: 60%;
+}
+
+.newTask{
+    background-color: rgb(209, 28, 28);
+    border-radius: 5px !important;
+    color: white !important;
+    height: 35px !important;
+    text-transform: capitalize;
+}
+
+.tasksAction{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 16px 0;
+}
+
+.newTask:hover{
+    text-shadow: 0 0 5px white !important;
+    background-color: rgb(209, 28, 28) !important;
+}
+
+h2{
+    text-transform: capitalize;
+}
+
+.tasksContainer{
+    box-shadow: 0 0 1px gray;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.task{
+    box-shadow: 0 0 2px gray;
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize; 
 }
